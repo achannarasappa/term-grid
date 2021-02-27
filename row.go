@@ -11,7 +11,7 @@ type Row struct {
 	Cells []Cell
 }
 
-func getElementWidth(widthTotal int, count int) (int, int) {
+func getWidthFlexCells(widthTotal int, count int) (int, int) {
 
 	if count <= 0 {
 		return widthTotal, 0
@@ -40,12 +40,12 @@ func updateCellWidths(widthTotal int, widthGutter int, cells []Cell) []Cell {
 
 	widthFlex = widthFlex - (widthGutter * (len(cells) - 1))
 
-	widthWithoutRemainder, remainder := getElementWidth(widthFlex, len(widthFlexCells))
+	widthFlexCellsWithoutRemainder, widthRemainder := getWidthFlexCells(widthFlex, len(widthFlexCells))
 	for i := range widthFlexCells {
 
-		*widthFlexCells[i] = widthWithoutRemainder
-		if i < remainder {
-			*widthFlexCells[i] = widthWithoutRemainder + 1
+		*widthFlexCells[i] = widthFlexCellsWithoutRemainder
+		if i < widthRemainder {
+			*widthFlexCells[i] = widthFlexCellsWithoutRemainder + 1
 		}
 	}
 	return cells
