@@ -13,6 +13,7 @@ const (
 	gutterChar string = " "
 )
 
+// Cell contains settings for a single cell within the parent Row
 type Cell struct {
 	Text     string
 	Width    int

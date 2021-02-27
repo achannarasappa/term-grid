@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// Row contains settings for a single row within the parent Grid
 type Row struct {
 	Width int
 	Cells []Cell

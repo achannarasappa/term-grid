@@ -2,12 +2,15 @@ package grid
 
 import "strings"
 
+// Grid contains settings that apply to the entire grid
 type Grid struct {
 	Rows             []Row
 	GutterVertical   int
 	GutterHorizontal int
 }
 
+// Renders a grid based on the settings defined by the argument Grid, Row(s), and Cell(s)
+// Outputs a string with the settings applied
 func Render(grid Grid) string {
 
 	var rows = make([]string, 0)
