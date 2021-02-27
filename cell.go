@@ -17,7 +17,6 @@ const (
 type Cell struct {
 	Text     string
 	Width    int
-	Height   int
 	Align    TextAlign
 	Overflow Overflow
 }

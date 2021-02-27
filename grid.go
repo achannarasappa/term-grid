@@ -1,3 +1,5 @@
+// Package grid provides the functionality to render a configurable text grid
+// for use in terminal UI application
 package grid
 
 import "strings"

@@ -4,7 +4,9 @@ package grid
 type TextAlign int
 
 const (
+	// Left align text within a cell
 	Left TextAlign = iota
+	// Right align text within a cell
 	Right
 )
 
@@ -16,11 +18,15 @@ func (ta TextAlign) String() string {
 type Overflow int
 
 const (
+	// Hide text that extends beyond the width of a cell
 	Hidden Overflow = iota
+	// Wrap text onto the next line when the text width exceeds the width of the cell
 	Wrap
+	// Wrap text onto the next line when the text width exceeds the width of the cell
+	// but only break on words
 	WrapWord
 )
 
-func (ta Overflow) String() string {
-	return [...]string{"Hidden", "Wrap", "WrapWord"}[ta]
+func (to Overflow) String() string {
+	return [...]string{"Hidden", "Wrap", "WrapWord"}[to]
 }
