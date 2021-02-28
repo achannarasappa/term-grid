@@ -15,10 +15,11 @@ const (
 
 // Cell contains settings for a single cell within the parent Row
 type Cell struct {
-	Text     string
-	Width    int
-	Align    TextAlign
-	Overflow Overflow
+	Text            string
+	Width           int
+	Align           TextAlign
+	Overflow        Overflow
+	VisibleMinWidth int
 }
 
 func getText(cell Cell) string {
@@ -53,7 +54,7 @@ func getLineText(lineIndex int, lineTexts []string, cellHeightMax int, cellWidth
 	return strings.Repeat(fillChar, cellWidth)
 }
 
-func getLines(cell Cell, lines []string, heightMax int, widthLinePreviousCells int, widthGutter int) ([]string, int) {
+func getLines(cell Cell, lines []string, heightMax int, widthLinePreviousCells int, config gridConfig) ([]string, int) {
 
 	text := getText(cell)
 
@@ -70,9 +71,10 @@ func getLines(cell Cell, lines []string, heightMax int, widthLinePreviousCells i
 
 	for lineIndex := 0; lineIndex < heightMax; lineIndex++ {
 
+		temptextline := getLineText(lineIndex, textLines, cellHeightMax, cell.Width, cell.Align)
 		lines[lineIndex] = lines[lineIndex] +
-			getLineText(lineIndex, textLines, cellHeightMax, cell.Width, cell.Align) +
-			strings.Repeat(gutterChar, widthGutter)
+			temptextline +
+			strings.Repeat(gutterChar, config.widthGutter)
 
 	}
 

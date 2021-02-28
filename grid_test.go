@@ -58,6 +58,11 @@ var _ = Describe("Grid", func() {
 								Text:     "fixed width cell that does not take up entire width of row",
 								Overflow: WrapWord,
 							},
+							{
+								Width:           20,
+								Text:            "cell that is only visible on larger terminals",
+								VisibleMinWidth: Large.Size(),
+							},
 						},
 					},
 					{
@@ -111,13 +116,6 @@ fixed width  flex width 1        flex width 2        flex width 3     `
 				Expect(input).To(Equal(output))
 			})
 		})
-		When("right align is selected", func() {
-			It("returns the text for right align text", func() {
-				input := Right.String()
-				output := "Right"
-				Expect(input).To(Equal(output))
-			})
-		})
 	})
 
 	Describe("Overflow", func() {
@@ -128,19 +126,13 @@ fixed width  flex width 1        flex width 2        flex width 3     `
 				Expect(input).To(Equal(output))
 			})
 		})
+	})
 
-		When("wrap is selected", func() {
-			It("returns the text for wrap overflow text", func() {
-				input := Wrap.String()
-				output := "Wrap"
-				Expect(input).To(Equal(output))
-			})
-		})
-
-		When("word wrap is selected", func() {
-			It("returns the text for word wrap overflow text", func() {
-				input := WrapWord.String()
-				output := "WrapWord"
+	Describe("Breakpoint", func() {
+		When("hidden is selected", func() {
+			It("returns the breakpoint text", func() {
+				input := Small.String()
+				output := "Small"
 				Expect(input).To(Equal(output))
 			})
 		})

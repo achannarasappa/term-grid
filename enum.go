@@ -30,3 +30,21 @@ const (
 func (to Overflow) String() string {
 	return [...]string{"Hidden", "Wrap", "WrapWord"}[to]
 }
+
+// Breakpoint is an enum used to set the visibility of cells are various terminal sizes
+type Breakpoint int
+
+const (
+	Small Breakpoint = iota
+	Medium
+	Large
+	XLarge
+)
+
+func (bp Breakpoint) String() string {
+	return [...]string{"Small", "Medium", "Large", "XLarge"}[bp]
+}
+
+func (bp Breakpoint) Size() int {
+	return [...]int{50, 100, 200, 400}[bp]
+}
