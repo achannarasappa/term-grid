@@ -1,7 +1,7 @@
 # term-grid
 <p>
     <a href="https://github.com/achannarasappa/term-grid/actions"><img src="https://github.com/achannarasappa/term-grid/workflows/test/badge.svg" alt="Build Status"></a>
-    <a href='https://coveralls.io/github/achannarasappa/term-grid?branch=master'><img src='https://coveralls.io/repos/github/achannarasappa/term-grid/badge.svg?branch=master' alt='Coverage Status' /></a>
+    <a href='https://coveralls.io/github/achannarasappa/term-grid?branch=main'><img src='https://coveralls.io/repos/github/achannarasappa/term-grid/badge.svg?branch=main' alt='Coverage Status' /></a>
     <a href='https://goreportcard.com/badge/github.com/achannarasappa/term-grid'><img src='https://goreportcard.com/badge/github.com/achannarasappa/term-grid' alt='Report Card' /></a>
 </p>
 
