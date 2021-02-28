@@ -4,11 +4,11 @@ A simple library to position text and visuals in a grid layout for terminal UIs 
 
 ## Features
 
-* Responsive - show or hide cells dynamically based on grid size
-* Flex layout - dynamically resize cells to use available space
-* Align text - align text to the right of left of a cell
-* Overflow/Wrap text - set whether text should be hidden, wrap on word, or wrap unconditionally when width exceeds the cell width
-* Margins - set width vertically and horizontally between cells
+* **Flex Layout** - dynamically resize cells to use available space
+* **Responsive** - show or hide cells dynamically based on grid size
+* **Alignment** - align text to the right of left of a cell
+* **Overflow/Wrap** - set whether text should be hidden, wrap on word, or wrap unconditionally when width exceeds the cell width
+* **Margins** - set width vertically and horizontally between cells
 
 ## Install
 
