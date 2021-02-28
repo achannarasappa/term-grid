@@ -1,6 +1,6 @@
 # term-grid
 
-A simple library to position text and visuals in a grid layout for terminal UIs (TUIs)
+Position text and visuals in a grid layout for terminal UIs (TUIs) with semantics akin to web markup
 
 ## Features
 
@@ -28,24 +28,24 @@ import (
 )
 
 func main() {
-	out := Render(
-		Grid{
-			GutterVertical:   2,
-			GutterHorizontal: 5,
-			Rows: []Row{
-				{
-					Width: 100,
-					Cells: []Cell{
-						{Width: 10, Text: "term-grid is awesome!", Overflow: WrapWord},
-						{Width: 10, Text: "everything to the right", Overflow: Wrap, Align: Right},
-						{Width: 20, Text: "To Do:\n- take out trash\n- book my flight\n- workout", Overflow: WrapWord},
-						{Text: "I'm baby pitchfork iPhone tilde umami man braid"},
-					},
-				},
-			},
-		})
+  out := Render(
+    Grid{
+      GutterVertical:   2,
+      GutterHorizontal: 5,
+      Rows: []Row{
+        {
+          Width: 100,
+          Cells: []Cell{
+            {Width: 10, Text: "term-grid is awesome!", Overflow: WrapWord},
+            {Width: 10, Text: "everything to the right", Overflow: Wrap, Align: Right},
+            {Width: 20, Text: "To Do:\n- take out trash\n- book my flight\n- workout", Overflow: WrapWord},
+            {Text: "I'm baby pitchfork iPhone tilde umami man braid"},
+          },
+        },
+      },
+    })
 
-	fmt.Print(out)
+  fmt.Print(out)
 }
 ```
 
