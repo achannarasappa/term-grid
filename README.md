@@ -5,7 +5,7 @@
     <a href='https://goreportcard.com/badge/github.com/achannarasappa/term-grid'><img src='https://goreportcard.com/badge/github.com/achannarasappa/term-grid' alt='Report Card' /></a>
 </p>
 
-Position text and visuals in a grid layout for terminal UIs (TUIs) with semantics akin to web markup
+Position text and visuals in a grid layout for terminal UIs (TUIs) with familiar web semantics
 
 ## Features
 
