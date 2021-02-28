@@ -41,7 +41,7 @@ var _ = Describe("Grid", func() {
 						Cells: []Cell{
 							{
 								Width:    50,
-								Text:     "right aligned fixed width cell with word wrap - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
+								Text:     "right aligned fixed width cell with word wrap. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
 								Align:    Right,
 								Overflow: WrapWord,
 							},
@@ -83,22 +83,22 @@ var _ = Describe("Grid", func() {
 
 		expected := `
 
-test2 this  test1a tes  test4a----  test3 this is another long sentenc
-is a long-  t1b test1c  test4b----  ----------------------------------
-sentence--  test1d----  test4c----  ----------------------------------
-that will-  ----------  test4d----  ----------------------------------
-need to be  ----------  ----------  ----------------------------------
-wrapped by  ----------  ----------  ----------------------------------
-word------  ----------  ----------  ----------------------------------
+test2 this  test1a tes  test4a      test3 this is another long sentenc
+is a long   t1b test1c  test4b                                        
+sentence    test1d      test4c                                        
+that will               test4d                                        
+need to be                                                            
+wrapped by                                                            
+word                                                                  
 
----right aligned fixed width cell with word wrap -  flex width cell he
-Lorem ipsum dolor sit amet, consectetur adipiscing  ------------------
---------------------------------------elit, sed do  ------------------
+    right aligned fixed width cell with word wrap.  flex width cell he
+Lorem ipsum dolor sit amet, consectetur adipiscing                    
+                                      elit, sed do                    
 
 fixed width cell that does not take
-up entire width of row-------------
+up entire width of row             
 
-fixed width  flex width 1------  flex width 2------  flex width 3-----`
+fixed width  flex width 1        flex width 2        flex width 3     `
 
 		Expect("\n\n" + output).To(BeIdenticalTo(expected))
 	})

@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	fillChar   string = "-"
+	fillChar   string = " "
 	gutterChar string = " "
 )
 
