@@ -31,6 +31,10 @@ func updateCells(widthTotal int, widthGutter int, cells []Cell) []Cell {
 
 	for _, cell := range cells {
 
+		if cell.Width < 0 {
+			continue
+		}
+
 		if cell.VisibleMinWidth > 0 && cell.VisibleMinWidth > widthTotal {
 			continue
 		}

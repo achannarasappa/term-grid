@@ -63,6 +63,10 @@ var _ = Describe("Grid", func() {
 								Text:            "cell that is only visible on larger terminals",
 								VisibleMinWidth: Large.Size(),
 							},
+							{
+								Width: -1,
+								Text:  "cell with invalid width",
+							},
 						},
 					},
 					{
