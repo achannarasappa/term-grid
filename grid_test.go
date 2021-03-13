@@ -87,6 +87,26 @@ var _ = Describe("Grid", func() {
 							},
 						},
 					},
+					{
+						Width: 70,
+						Cells: []Cell{
+							{
+								Width: 50,
+								Text:  "oversize 1",
+							},
+							{
+								Width: 50,
+								Text:  "oversize 2",
+							},
+							{
+								Width: 50,
+								Text:  "oversize 3",
+							},
+							{
+								Text: "flex width 4",
+							},
+						},
+					},
 				},
 			})
 
@@ -107,7 +127,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing
 fixed width cell that does not take
 up entire width of row             
 
-fixed width  flex width 1        flex width 2        flex width 3     `
+fixed width  flex width 1        flex width 2        flex width 3     
+
+oversize 1                                          oversize 2        `
 
 		Expect("\n\n" + output).To(BeIdenticalTo(expected))
 	})

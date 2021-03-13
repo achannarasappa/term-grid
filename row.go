@@ -47,6 +47,10 @@ func updateCells(widthTotal int, widthGutter int, cells []Cell) []Cell {
 		cellsFiltered = append(cellsFiltered, cell)
 	}
 
+	if widthFlex <= 0 {
+		return cellsFiltered
+	}
+
 	widthFlex = widthFlex - (widthGutter * (len(cellsFiltered) - 1))
 
 	widthFlexCellsWithoutRemainder, widthRemainder := getWidthFlexCells(widthFlex, countFlexWidthCells)
@@ -75,16 +79,25 @@ func renderRow(row Row, config gridConfig) string {
 	heightMax := 0
 	widthLinePreviousCells := 0
 	cells := updateCells(row.Width, config.widthGutter, row.Cells)
+	cellLastIndex := (len(cells) - 1)
 
 	for i, cell := range cells {
 
-		if i == (len(cells) - 1) {
+		if i == cellLastIndex {
 			config.widthGutter = 0
 		}
 
 		lines, heightMax = getLines(cell, lines, heightMax, widthLinePreviousCells, config)
 
 		widthLinePreviousCells += cell.Width + config.widthGutter
+	}
+
+	for i, line := range lines {
+
+		if len(line) > row.Width {
+			lines[i] = lines[i][:row.Width]
+		}
+
 	}
 
 	return strings.Join(lines, "\n")
