@@ -3,6 +3,8 @@ package grid
 import (
 	"math"
 	"strings"
+
+	"github.com/muesli/reflow/ansi"
 )
 
 // Row contains settings for a single row within the parent Grid
@@ -94,7 +96,7 @@ func renderRow(row Row, config gridConfig) string {
 
 	for i, line := range lines {
 
-		if len(line) > row.Width {
+		if ansi.PrintableRuneWidth(line) > row.Width {
 			lines[i] = lines[i][:row.Width]
 		}
 
